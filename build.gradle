@@ -1,9 +1,6 @@
 group 'no.tornado.tornadofx'
 version '1.0.0-SNAPSHOT'
 
-/**
- ******************  Script Confguration ******************
- */
 buildscript {
   ext.kotlin_version = '1.0.4'
   ext.tornadofx_version = '1.5.8-SNAPSHOT'
@@ -33,19 +30,13 @@ repositories {
   mavenLocal()
 }
 
-/**
- ******************  Java Confguration ******************
- */
 apply plugin: 'kotlin'
 
-/**
- ******************  jpro Confguration ******************
- */
 apply plugin: 'com.jprotechnologies.jpro'
 
 startServerCommand {
   jvmArgs '-Xmx2048m'
-  jvmArgs '-agentlib:jdwp=transport=dt_socket,server=y,address=5006,suspend=y'
+  //jvmArgs '-agentlib:jdwp=transport=dt_socket,server=y,address=5006,suspend=y'
 }
 
 
