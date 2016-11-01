@@ -1,0 +1,14 @@
+{
+  "name": "Samples",
+  "samples": [
+    {
+      "name": "Master Detail",
+      "samples": [
+        {
+          "name": "Person Editor",
+          "entrypoint": "tornadofx.kitchensink.samples.masterdetail.scoped.view.MainView"
+        }
+      ]
+    }
+  ]
+}
