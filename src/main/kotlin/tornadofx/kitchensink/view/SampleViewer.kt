@@ -8,54 +8,43 @@ import javafx.scene.web.WebView
 import tornadofx.*
 import tornadofx.kitchensink.model.SampleEntry
 import tornadofx.kitchensink.model.SampleModel
-import kotlin.reflect.KClass
 
 class SampleViewer : View() {
     val model: SampleModel by inject()
-    val exampleContent by cssid()
-    val codeView by cssid()
-    val descriptionView by cssid()
 
     override val root = tabpane {
         hboxConstraints { hGrow = Priority.ALWAYS }
         tab("Example") {
-            isClosable = false
             stackpane {
-                setId(exampleContent)
+                loadCodeSampleOnChange()
             }
         }
-        tab("Code") {
-            isClosable = false
+        tab("Code and Description") {
             webview {
-                setId(codeView)
+                loadReadmeOnChange()
             }
         }
-        tab("Description") {
-            isClosable = false
-            webview {
-                setId(descriptionView)
+        tabs.forEach { it.isClosable = false }
+    }
+
+    private fun WebView.loadReadmeOnChange() {
+        model.itemProperty.onChange {
+            if (it is SampleEntry.Sample) {
+                engine.load(it.baseURL)
             }
         }
     }
 
-    init {
-        // Clear stackpane and show Sample on selection change
+    private fun StackPane.loadCodeSampleOnChange() {
         model.itemProperty.onChange {
             if (it is SampleEntry.Sample) {
-                val content = root.select<StackPane>(exampleContent)
-                val codePane = root.select<WebView>(codeView)
-                val descriptionPane = root.select<WebView>(descriptionView)
-
-                val base = "https://github.com/edvin/tornadofx-kitchensink/tree/master/src/main/kotlin/${it.entrypoint.replace(".", "/")}"
-                codePane.engine.load(base)
-                descriptionPane.engine.loadContent("$base/README.md")
-
                 runAsync {
-                    find(Class.forName(it.entrypoint).kotlin as KClass<UIComponent>)
+                    find(it.mainViewType)
                 } ui {
-                    content.children.setAll(it.root)
+                    children.setAll(it.root)
                 }
             }
         }
     }
+
 }
