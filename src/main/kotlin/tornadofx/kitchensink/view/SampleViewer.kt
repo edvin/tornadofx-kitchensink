@@ -46,7 +46,7 @@ class SampleViewer : View() {
                 val codePane = root.select<WebView>(codeView)
                 val descriptionPane = root.select<WebView>(descriptionView)
 
-                val url = "https://github.com/edvin/tornadofx-kitchensink/blob/master/${it.entrypoint.replace(".", "/")}"
+                val url = "https://github.com/edvin/tornadofx-kitchensink/tree/master/src/main/kotlin/${it.entrypoint.replace(".", "/")}"
                 codePane.engine.load(url)
                 descriptionPane.engine.loadContent("$url/README.md")
 
