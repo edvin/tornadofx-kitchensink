@@ -5,7 +5,7 @@ self contained in it's own package structure to make it easy to extract a sample
 
 Every sample comes with a description to help you understand what's going on and will highlight relevant parts of the code you might want to direct special attention towards.
 
-A binary and native version of this app will be provided shortly.
+A [runnable jar](http://tornadofx.tornado.no/kitchensink/fxlauncher.jar) is available that will launcher the kitchen sink automatically.
 
 ## Contributing samples
 
@@ -17,7 +17,7 @@ A binary and native version of this app will be provided shortly.
     - `model` - For model objects and view models
     - `README.md`- Description and helpful information about the sample
 - Describe your sample in the [samples.json](tree/master/src/main/resources/samples.json) descriptor
-    - Make sure you fill in all fields. Either pick an existing category or create a new under the `samples` node. Describe your sample like this:
+    - Either pick an existing category or create a new under the `samples` node. Describe your sample like this:
 
 ```json
 {
