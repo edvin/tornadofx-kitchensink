@@ -46,9 +46,9 @@ class SampleViewer : View() {
                 val codePane = root.select<WebView>(codeView)
                 val descriptionPane = root.select<WebView>(descriptionView)
 
-                val url = "https://github.com/edvin/tornadofx-kitchensink/tree/master/src/main/kotlin/${it.entrypoint.replace(".", "/")}"
-                codePane.engine.load(url)
-                descriptionPane.engine.loadContent("$url/README.md")
+                val base = "https://github.com/edvin/tornadofx-kitchensink/tree/master/src/main/kotlin/${it.entrypoint.replace(".", "/")}"
+                codePane.engine.load(base)
+                descriptionPane.engine.loadContent("$base/README.md")
 
                 runAsync {
                     find(Class.forName(it.entrypoint).kotlin as KClass<UIComponent>)

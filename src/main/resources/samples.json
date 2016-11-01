@@ -6,7 +6,7 @@
       "samples": [
         {
           "name": "Person Editor",
-          "entrypoint": "tornadofx.kitchensink.samples.masterdetail.scoped.view.MainView"
+          "entrypoint": "tornadofx.kitchensink.samples.masterdetail.scoped"
         }
       ]
     }
