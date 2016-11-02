@@ -7,8 +7,8 @@ import javafx.scene.control.ListView
 import javafx.scene.control.TableView
 import javafx.stage.Stage
 import tornadofx.*
-import tornadofx.kitchensink.samples.masterdetail.scoped.controller.PersonController
-import tornadofx.kitchensink.samples.masterdetail.scoped.model.PhoneNumber
+import tornadofx.kitchensink.samples.masterdetail.simple.controller.PersonController
+import tornadofx.kitchensink.samples.masterdetail.simple.model.PhoneNumber
 import tornadofx.kitchensink.view.MainScreen
 
 class KitchenSinkApp : App(MainScreen::class, Styles::class)

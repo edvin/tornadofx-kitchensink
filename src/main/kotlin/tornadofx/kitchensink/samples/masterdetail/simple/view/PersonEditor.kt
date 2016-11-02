@@ -1,9 +1,9 @@
-package tornadofx.kitchensink.samples.masterdetail.scoped.view
+package tornadofx.kitchensink.samples.masterdetail.simple.view
 
 import javafx.scene.control.TableView
 import tornadofx.*
-import tornadofx.kitchensink.samples.masterdetail.scoped.model.PersonModel
-import tornadofx.kitchensink.samples.masterdetail.scoped.model.PhoneNumber
+import tornadofx.kitchensink.samples.masterdetail.simple.model.PersonModel
+import tornadofx.kitchensink.samples.masterdetail.simple.model.PhoneNumber
 
 class PersonEditor : View() {
     val model : PersonModel by inject()

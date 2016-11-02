@@ -23,7 +23,7 @@ We also have a native installer for [Windows](http://tornadofx.tornado.no/kitche
 ```json
 {
   "name": "Person Editor",
-  "entrypoint": "tornadofx.kitchensink.samples.masterdetail.scoped"
+  "entrypoint": "tornadofx.kitchensink.samples.masterdetail.simple"
 }
 ```
 

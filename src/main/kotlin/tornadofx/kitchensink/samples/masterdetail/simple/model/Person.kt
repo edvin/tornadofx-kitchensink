@@ -1,4 +1,4 @@
-package tornadofx.kitchensink.samples.masterdetail.scoped.model
+package tornadofx.kitchensink.samples.masterdetail.simple.model
 
 import javafx.collections.FXCollections
 import tornadofx.ItemViewModel

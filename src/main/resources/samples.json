@@ -5,8 +5,8 @@
       "name": "Master Detail",
       "samples": [
         {
-          "name": "Person Editor",
-          "entrypoint": "tornadofx.kitchensink.samples.masterdetail.scoped"
+          "name": "Simple Person Editor",
+          "entrypoint": "tornadofx.kitchensink.samples.masterdetail.simple"
         }
       ]
     }

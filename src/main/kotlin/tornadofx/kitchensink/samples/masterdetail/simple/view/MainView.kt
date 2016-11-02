@@ -1,4 +1,4 @@
-package tornadofx.kitchensink.samples.masterdetail.scoped.view
+package tornadofx.kitchensink.samples.masterdetail.simple.view
 
 import tornadofx.View
 import tornadofx.hbox

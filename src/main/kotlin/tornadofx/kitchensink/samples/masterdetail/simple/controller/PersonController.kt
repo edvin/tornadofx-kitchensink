@@ -1,9 +1,9 @@
-package tornadofx.kitchensink.samples.masterdetail.scoped.controller
+package tornadofx.kitchensink.samples.masterdetail.simple.controller
 
 import javafx.collections.FXCollections
 import tornadofx.Controller
-import tornadofx.kitchensink.samples.masterdetail.scoped.model.Person
-import tornadofx.kitchensink.samples.masterdetail.scoped.model.PhoneNumber
+import tornadofx.kitchensink.samples.masterdetail.simple.model.Person
+import tornadofx.kitchensink.samples.masterdetail.simple.model.PhoneNumber
 
 class PersonController : Controller() {
     val persons = FXCollections.observableArrayList<Person>()
