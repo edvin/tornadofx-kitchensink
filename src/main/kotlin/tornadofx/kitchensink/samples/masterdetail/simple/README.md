@@ -18,7 +18,7 @@ scope named `DefaultScope`. To open a new editor with a separate scope, you can 
 (the holder for both master and detail Views) with a unique scope:
 
 ```kotlin
-val newEditor = find(MainView::class, Scope())
+find(MainView::class, Scope()).openModal()
 ```
 
 No state is shared in the Scope for this sample, but it would be a good alternative to subclass `Scope`
