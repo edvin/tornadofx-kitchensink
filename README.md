@@ -6,6 +6,7 @@ self contained in it's own package structure to make it easy to extract a sample
 Every sample comes with a description to help you understand what's going on and will highlight relevant parts of the code you might want to direct special attention towards.
 
 A [runnable jar](http://tornadofx.tornado.no/kitchensink/fxlauncher.jar) is available that will launcher the kitchen sink automatically.
+We also have a native installer for [Windows](http://tornadofx.tornado.no/kitchensink/tornadofx-kitchensink-1.0.exe).
 
 ## Contributing samples
 
