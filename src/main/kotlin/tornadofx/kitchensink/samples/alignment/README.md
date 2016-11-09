@@ -12,4 +12,16 @@ label("Position") {
 
 It looks like we are setting a property on the `Label` while infact the static `VBox.setMargin` call is applied for us. This makes the ui code much leaner.
 
-To apply styles to each vbox, the `Collection<Node>.style` helper is used so we don't need to iterate over all the children manually to apply the styles. An alternative here would be to apply a style class to each `VBox` and configure this in a Stylesheet instead. 
+To apply styles to each `VBox`, the `style` helper is used so we don't need to iterate over all the children manually to apply the styles:
+
+```kotlin
+children.style {
+    backgroundColor += Color.TAN
+    effect = DropShadow()
+    prefWidth = 150.px
+    prefHeight = 150.px
+    padding = box(10.px)
+}
+```
+
+An alternative here would be to apply a style class to each `VBox` and configure this in a Stylesheet instead. 
