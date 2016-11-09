@@ -2,7 +2,7 @@ group 'no.tornado.tornadofx'
 version '1.0'
 
 buildscript {
-    ext.kotlin_version = '1.0.4'
+    ext.kotlin_version = '1.0.5'
     ext.tornadofx_version = '1.5.8-SNAPSHOT'
     ext.jpro_version = '0.1.8-SNAPSHOT'
     ext.jpro_plugin_version = ext.jpro_version
