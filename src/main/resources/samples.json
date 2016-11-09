@@ -9,6 +9,15 @@
           "entrypoint": "tornadofx.kitchensink.samples.masterdetail.scoped"
         }
       ]
+    },
+    {
+      "name": "Layout",
+      "samples": [
+        {
+          "name": "Alignment",
+          "entrypoint": "tornadofx.kitchensink.samples.alignment"
+        }
+      ]
     }
   ]
 }
