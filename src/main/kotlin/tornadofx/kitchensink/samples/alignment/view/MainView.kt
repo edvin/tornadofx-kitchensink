@@ -21,63 +21,63 @@ class MainView : View("Alignment") {
 
             vbox {
                 label(Pos.TOP_LEFT.toString()) {
-                    margin = Insets(10.0)
+                    margin = Insets(5.0)
                 }
                 alignment = Pos.TOP_LEFT
             }
 
             vbox {
                 label(Pos.TOP_CENTER.toString()) {
-                    margin = Insets(10.0)
+                    margin = Insets(5.0)
                 }
                 alignment = Pos.TOP_CENTER
             }
 
             vbox {
                 label(Pos.TOP_RIGHT.toString()) {
-                    margin = Insets(10.0)
+                    margin = Insets(5.0)
                 }
                 alignment = Pos.TOP_RIGHT
             }
 
             vbox {
                 label(Pos.CENTER_LEFT.toString()) {
-                    margin = Insets(10.0)
+                    margin = Insets(5.0)
                 }
                 alignment = Pos.CENTER_LEFT
             }
 
             vbox {
                 label(Pos.CENTER.toString()) {
-                    margin = Insets(10.0)
+                    margin = Insets(5.0)
                 }
                 alignment = Pos.CENTER
             }
 
             vbox {
                 label(Pos.CENTER_RIGHT.toString()) {
-                    margin = Insets(10.0)
+                    margin = Insets(5.0)
                 }
                 alignment = Pos.CENTER_RIGHT
             }
 
             vbox {
                 label(Pos.BOTTOM_LEFT.toString()) {
-                    margin = Insets(10.0)
+                    margin = Insets(5.0)
                 }
                 alignment = Pos.BOTTOM_LEFT
             }
 
             vbox {
                 label(Pos.BOTTOM_CENTER.toString()) {
-                    margin = Insets(10.0)
+                    margin = Insets(5.0)
                 }
                 alignment = Pos.BOTTOM_CENTER
             }
 
             vbox {
                 label(Pos.BOTTOM_RIGHT.toString()) {
-                    margin = Insets(10.0)
+                    margin = Insets(5.0)
                 }
                 alignment = Pos.BOTTOM_RIGHT
             }
