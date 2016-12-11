@@ -3,7 +3,7 @@
 This sample shows how to communicate between a master and a detail view using scopes. When the user
 double clicks an item in the TableView, a new Window is popped up to operate on the selected user.
 
-The user is available using injection only for that scope. The `edit` function in the list view takes care of
+The user is made available to the editor using injection only for that scope. The `edit` function in the list view takes care of
 creating a new scope and associating a viewmodel for the selected user with that scope:
 
 ```kotlin

@@ -1,12 +1,13 @@
-package tornadofx.kitchensink.samples.masterdetail.scope.view
+package tornadofx.kitchensink.samples.masterdetail.scopewithdata.view
 
 import javafx.scene.control.TableView
 import tornadofx.*
-import tornadofx.kitchensink.samples.masterdetail.scope.model.PersonModel
-import tornadofx.kitchensink.samples.masterdetail.scope.model.PhoneNumber
+import tornadofx.kitchensink.samples.masterdetail.scopewithdata.model.PersonScope
+import tornadofx.kitchensink.samples.masterdetail.scopewithdata.model.PhoneNumber
 
 class PersonEditor : View() {
-    val model : PersonModel by inject()
+    override val scope = super.scope as PersonScope
+    val model = scope.model
     var numbersTable: TableView<PhoneNumber> by singleAssign()
 
     override val root = form {
