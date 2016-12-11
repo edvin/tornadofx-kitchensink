@@ -1,4 +1,4 @@
-## Scoped Master/Detail
+## Scoped Master/Detail with ViewModel in custom scope
 
 This sample shows how to communicate between a master and a detail view using scopes. When the user
 double clicks an item in the TableView, a new Window is popped up to operate on the selected user.
