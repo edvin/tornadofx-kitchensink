@@ -1,9 +1,9 @@
 package tornadofx.kitchensink.samples.masterdetail.scope.view
 
 import tornadofx.*
-import tornadofx.kitchensink.samples.masterdetail.simple.controller.PersonController
-import tornadofx.kitchensink.samples.masterdetail.simple.model.Person
-import tornadofx.kitchensink.samples.masterdetail.simple.model.PersonModel
+import tornadofx.kitchensink.samples.masterdetail.scope.controller.PersonController
+import tornadofx.kitchensink.samples.masterdetail.scope.model.Person
+import tornadofx.kitchensink.samples.masterdetail.scope.model.PersonModel
 
 class PersonList : View() {
     val controller : PersonController by inject()
