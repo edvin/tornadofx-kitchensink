@@ -1,18 +1,11 @@
 package tornadofx.kitchensink.app
 
-import com.jpro.JProApplication
-import com.jpro.WebAPI
-import javafx.scene.Scene
-import javafx.scene.control.ListView
-import javafx.scene.control.TableView
-import javafx.stage.Stage
-import tornadofx.*
-import tornadofx.kitchensink.samples.masterdetail.simple.controller.PersonController
-import tornadofx.kitchensink.samples.masterdetail.simple.model.PhoneNumber
+import tornadofx.App
 import tornadofx.kitchensink.view.MainScreen
 
 class KitchenSinkApp : App(MainScreen::class, Styles::class)
 
+/*
 class JProScope(val stage: Stage) : Scope() {
     val webAPI: WebAPI get() = WebAPI.getWebAPI(stage)
 }
@@ -32,3 +25,4 @@ class Main : JProApplication() {
         super.stop()
     }
 }
+*/

@@ -7,6 +7,14 @@
         {
           "name": "Simple Person Editor",
           "entrypoint": "tornadofx.kitchensink.samples.masterdetail.simple"
+        },
+        {
+          "name": "Person With Scope, ViewModel Injected",
+          "entrypoint": "tornadofx.kitchensink.samples.masterdetail.scope"
+        },
+        {
+          "name": "Person With Scope, ViewModel in Scope",
+          "entrypoint": "tornadofx.kitchensink.samples.masterdetail.scopewithdata"
         }
       ]
     },
