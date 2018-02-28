@@ -1,23 +1,26 @@
 package tornadofx.kitchensink.samples.masterdetail.simple.model
 
-import javafx.collections.FXCollections
-import tornadofx.ItemViewModel
-import tornadofx.getProperty
-import tornadofx.property
+import javafx.beans.property.SimpleIntegerProperty
+import javafx.beans.property.SimpleListProperty
+import javafx.beans.property.SimpleStringProperty
+import tornadofx.*
 
 class Person(id: Int, name: String, phoneNumbers: List<PhoneNumber>) {
-    var id by property(id)
-    fun idProperty() = getProperty(Person::id)
+    val idProperty = SimpleIntegerProperty(id)
+    var id by idProperty
 
-    var name by property(name)
-    fun nameProperty() = getProperty(Person::name)
+    val nameProperty = SimpleStringProperty(name)
+    var name by nameProperty
 
-    var phoneNumbers by property(FXCollections.observableArrayList(phoneNumbers))
-    fun phoneNumbersProperty() = getProperty(Person::phoneNumbers)
+    val phoneNumbersProperty = SimpleListProperty<PhoneNumber>(phoneNumbers.observable())
+    var phoneNumbers by phoneNumbersProperty
 }
 
 class PersonModel : ItemViewModel<Person>() {
-    val id = bind { item?.idProperty() }
-    val name = bind { item?.nameProperty() }
-    val phoneNumbers = bind { item?.phoneNumbersProperty() }
+    val id = bind(Person::idProperty)
+    val name = bind(Person::nameProperty)
+    val phoneNumbers = bind(Person::phoneNumbersProperty)
 }
+
+
+

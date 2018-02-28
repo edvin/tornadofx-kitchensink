@@ -1,0 +1,39 @@
+group 'no.tornado.tornadofx'
+version '1.0'
+
+buildscript {
+    ext.kotlin_version = '1.0.5-2'
+    ext.tornadofx_version = '1.5.9-SNAPSHOT'
+
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'no.tornado:fxlauncher-gradle-plugin:1.0.15'
+    }
+
+}
+
+repositories {
+    jcenter()
+    mavenLocal()
+}
+
+apply plugin: 'kotlin'
+apply plugin: 'no.tornado.fxlauncher'
+
+fxlauncher {
+    applicationVendor 'Tornado'
+    applicationUrl 'http://tornadofx.tornado.no/kitchensink/'
+    applicationMainClass 'tornadofx.kitchensink.app.KitchenSinkApp'
+    acceptDowngrade false
+    deployTarget 'w144768@tornadofx.tornado.no:www/kitchensink'
+}
+
+dependencies {
+    compile("no.tornado:tornadofx:$tornadofx_version")
+    compile("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version")
+}

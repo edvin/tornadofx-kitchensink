@@ -6,8 +6,8 @@ import tornadofx.kitchensink.samples.masterdetail.simple.model.PersonModel
 import tornadofx.kitchensink.samples.masterdetail.simple.model.PhoneNumber
 
 class PersonEditor : View() {
-    val model : PersonModel by inject()
-    var numbersTable: TableView<PhoneNumber> by singleAssign()
+    val model: PersonModel by inject()
+    val numbersTable: TableView<PhoneNumber> by singleAssign()
 
     override val root = form {
         fieldset("Personal Information") {
@@ -15,23 +15,20 @@ class PersonEditor : View() {
                 textfield(model.name)
             }
             button("Save") {
-                setOnAction {
+                action {
                     model.commit()
                 }
             }
         }
         fieldset("Phone Numbers") {
             vbox(5.0) {
-                tableview<PhoneNumber> {
-                    numbersTable = this
-                    isEditable = true
-                    columnResizePolicy = SmartResize.POLICY
+                tableview(model.phoneNumbers) {
+                    smartResize()
                     column("Country code", PhoneNumber::countryCodeProperty).makeEditable()
                     column("Number", PhoneNumber::numberProperty).makeEditable()
-                    itemsProperty().bind(model.phoneNumbers)
                 }
                 button("Add number") {
-                    setOnAction {
+                    action {
                         val newNumber = PhoneNumber("", "")
                         model.phoneNumbers.value.add(newNumber)
                         numbersTable.selectionModel.select(newNumber)

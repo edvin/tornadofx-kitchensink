@@ -1,7 +1,7 @@
 package tornadofx.kitchensink.samples.masterdetail.simple.controller
 
 import javafx.collections.FXCollections
-import tornadofx.Controller
+import tornadofx.*
 import tornadofx.kitchensink.samples.masterdetail.simple.model.Person
 import tornadofx.kitchensink.samples.masterdetail.simple.model.PhoneNumber
 

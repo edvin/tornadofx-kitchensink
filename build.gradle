@@ -2,17 +2,27 @@ group 'no.tornado.tornadofx'
 version '1.0'
 
 buildscript {
-    ext.kotlin_version = '1.0.5-2'
-    ext.tornadofx_version = '1.5.9-SNAPSHOT'
+    ext.kotlin_version = '1.2.21'
+    ext.tornadofx_version = '1.7.15'
+    ext.jpro_version = '0.1.9-SNAPSHOT'
+    ext.jpro_plugin_version = ext.jpro_version
+    ext.jpro_webapi_version = '1.0.6.9-SNAPSHOT'
 
     repositories {
+        maven {
+            url "http://mix-software.com:8081/nexus/content/repositories/jpro-snapshots"
+        }
+        maven {
+            url "http://sandec.bintray.com/repo"
+        }
         mavenCentral()
         jcenter()
     }
 
     dependencies {
+        classpath "com.jprotechnologies.jpro:jpro-plugin-gradle:$jpro_plugin_version"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath 'no.tornado:fxlauncher-gradle-plugin:1.0.14'
+        classpath 'no.tornado:fxlauncher-gradle-plugin:1.0.15'
     }
 
 }
@@ -24,6 +34,16 @@ repositories {
 
 apply plugin: 'kotlin'
 apply plugin: 'no.tornado.fxlauncher'
+apply plugin: 'com.jprotechnologies.jpro'
+
+startServerCommand {
+    jvmArgs '-Xmx2048m'
+    //jvmArgs '-agentlib:jdwp=transport=dt_socket,server=y,address=5006,suspend=y'
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
 
 fxlauncher {
     applicationVendor 'Tornado'
@@ -34,6 +54,17 @@ fxlauncher {
 }
 
 dependencies {
+    //compile("com.jprotechnologies.jpro:jpro-webapi-extensions:$jpro_webapi_version")
     compile("no.tornado:tornadofx:$tornadofx_version")
     compile("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version")
+}
+
+mainClassName = 'tornadofx.kitchensink.app.Main'
+
+jpro {
+    port = 8080
+    visible = false
+    noRenderJobs = true
+    useJProVM = false
+    jproVersion = "$jpro_version"
 }

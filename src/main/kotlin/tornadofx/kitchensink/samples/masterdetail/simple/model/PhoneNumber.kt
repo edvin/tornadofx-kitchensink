@@ -1,12 +1,12 @@
 package tornadofx.kitchensink.samples.masterdetail.simple.model
 
-import tornadofx.getProperty
-import tornadofx.property
+import javafx.beans.property.SimpleStringProperty
+import tornadofx.*
 
 class PhoneNumber(countryCode: String, number: String) {
-    var countryCode by property(countryCode)
-    fun countryCodeProperty() = getProperty(PhoneNumber::countryCode)
+    val countryCodeProperty = SimpleStringProperty(countryCode)
+    var countryCode by countryCodeProperty
 
+    val numberProperty = SimpleStringProperty(number)
     var number by property(number)
-    fun numberProperty() = getProperty(PhoneNumber::number)
 }

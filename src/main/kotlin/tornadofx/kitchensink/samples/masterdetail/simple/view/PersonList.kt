@@ -13,6 +13,6 @@ class PersonList : View() {
         column("Id", Person::idProperty)
         column("Name", Person::nameProperty)
         bindSelected(model)
-        columnResizePolicy = SmartResize.POLICY
+        smartResize()
     }
 }
