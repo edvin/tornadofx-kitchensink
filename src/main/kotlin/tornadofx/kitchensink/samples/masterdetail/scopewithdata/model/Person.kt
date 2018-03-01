@@ -1,27 +1,34 @@
 package tornadofx.kitchensink.samples.masterdetail.scopewithdata.model
 
+import javafx.beans.property.SimpleIntegerProperty
+import javafx.beans.property.SimpleStringProperty
 import javafx.collections.FXCollections
-import tornadofx.ItemViewModel
-import tornadofx.Scope
-import tornadofx.getProperty
-import tornadofx.property
+import tornadofx.*
 
 class Person(id: Int, name: String, phoneNumbers: List<PhoneNumber>) {
-    var id by property(id)
-    fun idProperty() = getProperty(Person::id)
+    val idProperty = SimpleIntegerProperty(id)
+    var id by idProperty
 
-    var name by property(name)
-    fun nameProperty() = getProperty(Person::name)
+    val nameProperty = SimpleStringProperty(name)
+    var name by nameProperty
 
-    var phoneNumbers by property(FXCollections.observableArrayList(phoneNumbers))
-    fun phoneNumbersProperty() = getProperty(Person::phoneNumbers)
+    val phoneNumbersProperty = FXCollections.observableArrayList(phoneNumbers)
 }
 
-class PersonModel : ItemViewModel<Person>() {
-    val id = bind { item?.idProperty() }
-    val name = bind { item?.nameProperty() }
-    val phoneNumbers = bind { item?.phoneNumbersProperty() }
+class PersonModel(person: Person? = null): ItemViewModel<Person>(person) {
+    val id = bind(Person::idProperty)
+    val name = bind(Person::nameProperty)
+    val phoneNumbers = bind(Person::phoneNumbersProperty)
+
+    fun addPhoneNumber(phoneNumber: PhoneNumber) {
+        phoneNumbers.value.add(phoneNumber)
+    }
+
+    fun removePhoneNumber(phoneNumber: PhoneNumber) {
+        phoneNumbers.value.remove(phoneNumber)
+    }
 }
+
 
 class PersonScope : Scope() {
     val model = PersonModel()
