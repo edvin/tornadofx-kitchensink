@@ -5,6 +5,6 @@ import tornadofx.hbox
 
 class MainView : View("Person Editor - double click to edit") {
     override val root = hbox {
-        this += PersonList::class
+        add<PersonList>()
     }
 }
